@@ -26,13 +26,13 @@ const Contact = () => {
                     View Location on Google Maps
                 </a>
             </div>
-            <div className="flex justify-center mt-8">
+            {/* <div className="flex justify-center mt-8">
                 <img 
                     src="https://maps.googleapis.com/maps/api/staticmap?center=12.9715987,77.5945627&zoom=15&size=600x300&maptype=roadmap&key=YOUR_API_KEY" 
                     alt="Google Maps Location"
                     className="rounded-lg shadow-lg"
                 />
-            </div>
+            </div> */}
         </div>
     );
 };
