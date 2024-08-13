@@ -1,15 +1,23 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Introduction from './components/Introduction'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Introduction from './components/Introduction';
+import Experience from './components/Experience';
+import Services from './components/Services';
+import './index.css';
+import Contact from './components/contact';
 
-function App() {
-  return (
-    <div>
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div>
-      <Navbar />
-      <Introduction />
-    </div>
-  )
-}
 
-export default App
+const App = () => {
+    return (
+        <div>
+            <Navbar />
+            <Introduction />
+            <Experience />
+            <Services />
+            <Contact />
+        </div>
+    );
+};
+
+export default App;
