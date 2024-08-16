@@ -6,8 +6,7 @@ import introImage from '../assets/intro.avif';
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
   visible: {
-    x: 0,
-    opacity: 1,
+    x: 0, opacity: 1,
     transition: { duration: 0.5, delay: delay },
   },
 });
@@ -16,7 +15,7 @@ const Introduction = () => {
   const { language } = useContext(LanguageContext);
   const content = {
     en: {
-      title: "Introduction",
+      title: "Bagavan Digital",
       text: "Bagavan Digital is a leading name in the digital printing industry, offering high-quality printing solutions for over 15 years. Known for our commitment to excellence and timely delivery, we have established ourselves as a trusted partner for businesses and individuals alike. Our dedication to quality and customer satisfaction has made us a go-to choice for all types of printing needs.",
     },
     ta: {
@@ -38,7 +37,8 @@ const Introduction = () => {
             <motion.h2
               variants={container(0)}
               initial="hidden"
-              animate="visible"
+              whileInView="visible" // This makes the animation trigger on scroll
+              viewport={{ once: true }}
               className="text-3xl font-bold mb-4 lg:text-5xl"
             >
               {content[language].title}
@@ -46,7 +46,8 @@ const Introduction = () => {
             <motion.p
               variants={container(0.5)}
               initial="hidden"
-              animate="visible"
+              whileInView="visible" // This makes the animation trigger on scroll
+              viewport={{ once: true }}
               className="text-lg max-w-xl py-6 font-light tracking-tighter"
             >
               {content[language].text}
@@ -59,8 +60,9 @@ const Introduction = () => {
           <div className="flex justify-center">
             <motion.img
               initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              whileInView={{ x: 0, opacity: 1 }} // This makes the animation trigger on scroll
               transition={{ duration: 1, delay: 1.2 }}
+              viewport={{ once: true }}
               src={introImage}
               alt="Introduction"
               className="max-w-full h-auto object-contain"
